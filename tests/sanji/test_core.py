@@ -213,6 +213,7 @@ class TestSanjiClass(unittest.TestCase):
             response(code=200, data=message.to_dict())
 
         resp.reset_mock()
+        self.test_model.publish.create_response = Mock(return_value=resp)
         with patch.object(self.test_model.router, "dispatch") as dispatch:
             dispatch.return_value = [{
                 "handlers": [{

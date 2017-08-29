@@ -6,6 +6,8 @@ install:
 script: make tox
 env:
   - TOXENV=py27
+  - TOXENV=py35
+  - TOXENV=py36
   - TOXENV=pypy
 after_success:
   coveralls

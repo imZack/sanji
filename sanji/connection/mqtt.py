@@ -8,6 +8,7 @@ import uuid
 import logging
 import simplejson as json
 import paho.mqtt.client as mqtt
+import six
 from time import sleep
 
 
@@ -101,7 +102,7 @@ class Mqtt(Connection):
         """
         set_tunnels(self, tunnels):
         """
-        for tunnel_type, (tunnel, callback) in tunnels.items():
+        for tunnel_type, (tunnel, callback) in six.iteritems(tunnels):
             if tunnel is None:
                 continue
             self.set_tunnel(tunnel_type, tunnel, callback)

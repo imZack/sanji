@@ -3,6 +3,7 @@ This is router class
 """
 
 import re
+import six
 from sanji.message import trim_resource
 
 
@@ -108,7 +109,7 @@ class Router(object):
         """
         results = []
         # match routes
-        for resource, route in self.routes.items():
+        for resource, route in six.iteritems(self.routes):
             __message = message.match(route)
             if __message is None:
                 continue
@@ -126,7 +127,7 @@ class Router(object):
 
     def get_routes(self):
         routes = {}
-        for resource, route in self.routes.items():
+        for resource, route in six.iteritems(self.routes):
             routes.update({resource: route.get_methods()})
 
         return routes

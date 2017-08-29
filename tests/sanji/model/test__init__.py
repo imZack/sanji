@@ -1,5 +1,5 @@
 from __future__ import print_function
-
+from six.moves import range
 import os
 import sys
 import tempfile

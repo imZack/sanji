@@ -460,7 +460,7 @@ def Route(resource=None, methods=["get", "post", "put", "delete"],
         # Ordered by declare sequence
         # http://stackoverflow.com/questions/4459531/how-to-read-class-attributes-in-the-same-order-as-declared
         f_locals = sys._getframe(1).f_locals
-        _order = len([v for v in f_locals.itervalues()
+        _order = len([v for v in f_locals.values()
                      if hasattr(v, '__call__') and
                      hasattr(v, '__name__') and
                      v.__name__ == "wrapper"])

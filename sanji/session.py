@@ -74,7 +74,7 @@ class Session(object):
 
     def resolve_send(self, mid_id):
         with self.session_lock:
-            for session in self.session_list.itervalues():
+            for session in self.session_list.values():
                 if session["mid"] == mid_id:
                     session["status"] = Status.SENT
                     session["is_published"].set()

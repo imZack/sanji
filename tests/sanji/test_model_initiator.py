@@ -17,7 +17,7 @@ try:
     sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/../../')
     from sanji.model_initiator import ModelInitiator
 except ImportError:
-    print "Please check the python PATH for import test module. (%s)" \
+    print("Please check the python PATH for import test module. (%s)") \
         % __file__
     exit(1)
 

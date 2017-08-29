@@ -29,8 +29,8 @@ ERROR_STR = """Error removing %(path)s, %(error)s """
 def rmgeneric(path, __func__):
     try:
         __func__(path)
-    except OSError as (errno, strerror):
-        logger.debug(ERROR_STR % {'path': path, 'error': strerror})
+    except OSError as err:
+        logger.debug(ERROR_STR % {'path': path, 'error': err.strerror})
 
 
 def removeall(path):
